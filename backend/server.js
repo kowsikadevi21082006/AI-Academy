@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 
+
 const webhookRoutes = require('./routes/webhook');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,9 +21,17 @@ app.get('/health', (req, res) => {
 });
 
 // Port Binding with Error Handling
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`========================================`);
     console.log(`🚀 AI Academy Backend is LIVE`);
     console.log(`🔗 Webhook Path: http://localhost:${PORT}/webhook`);
     console.log(`========================================`);
+});
+
+server.on('error', (e) => {
+    if (e.code === 'EADDRINUSE') {
+        console.error(`❌ Error: Port ${PORT} is already in use.`);
+        console.error(`💡 Solution: Run 'npm run dev' to automatically kill the old process and restart.`);
+        process.exit(1);
+    }
 });
