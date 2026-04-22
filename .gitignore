@@ -1,0 +1,44 @@
+# =========================
+# ENVIRONMENT VARIABLES
+# =========================
+.env
+.env.local
+.env.development
+.env.production
+
+# =========================
+# NODE MODULES
+# =========================
+node_modules/
+
+# =========================
+# LOG FILES
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# BUILD FILES (FRONTEND)
+# =========================
+frontend/build/
+frontend/.cache/
+
+# =========================
+# TEMP FILES
+# =========================
+tmp/
+temp/
+
+# =========================
+# NGROK (OPTIONAL)
+# =========================
+.ngrok2/
