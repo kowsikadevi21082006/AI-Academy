@@ -68,6 +68,13 @@ router.post('/webhook', async (req, res) => {
 router.post('/ask', async (req, res) => {
   try {
     const { question } = req.body;
+    if (!question) return res.status(400).json({ error: "No question provided" });
+
+    // ENTRY RULE CHECK
+    if (question.trim().toLowerCase() === "ai-academy") {
+      return res.json({ response: "Thank you for reaching out to the AI Academy! How can I help you today?" });
+    }
+
     const context = await getContext(question);
     const response = await generateResponse(context, question);
     res.json({ response });
