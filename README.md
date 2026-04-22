@@ -1,4 +1,4 @@
-# AI Academy WhatsApp Chatbot - Final Version
+# AI Academy WhatsApp Chatbot
 
 A production-ready, RAG-based WhatsApp chatbot designed to provide accurate course information.
 
@@ -22,5 +22,4 @@ Traditional AI "guesses" answers. RAG makes AI "look up" information first.
 4. **Webhook:** Set your Whapi webhook URL to `https://<ngrok-id>.ngrok-free.app/webhook`.
 5. **Start:** Run `npm start`.
 
-## 🛡️ Hallucination Control
-If a user asks something outside of the AI Academy scope (e.g., "Who is the President?"), the system will find no context and respond: *"I don't have that information."*
+
